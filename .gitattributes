@@ -1,0 +1,8 @@
+# PDF・画像・Excel・ZIPは改行変換しない（PDFは変換されると破損する）
+*.pdf binary
+*.png binary
+*.xlsx binary
+*.zip binary
+# Windows用スクリプトはCRLFで展開する
+*.bat text eol=crlf
+*.ps1 text eol=crlf
