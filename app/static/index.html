@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ローカル契約書管理</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">ローカル契約書管理</div>
+  <nav>
+    <a href="#/list" data-nav="list">契約一覧</a>
+    <a href="#/deadlines" data-nav="deadlines">期限・要確認</a>
+    <a href="#/import" data-nav="import">取込み</a>
+    <a href="#/settings" data-nav="settings">設定</a>
+  </nav>
+  <div class="offline" title="契約情報は外部へ送信しません">ローカル処理のみ</div>
+</header>
+<div id="notice-area"></div>
+<main id="app"></main>
+<div id="toast" class="toast hidden"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

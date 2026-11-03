@@ -1,0 +1,23 @@
+{
+  "_説明": "このファイルを settings.json という名前でコピーして編集すると、初回起動時（データフォルダが空のとき）だけ設定に反映されます。以降の変更は画面の「設定」から行ってください。",
+  "company_names": ["架空建設株式会社", "架空建設（株）"],
+  "alert_days_expiry": 90,
+  "alert_days_notice": 60,
+  "max_pdf_mb": 100,
+  "max_pages": 200,
+  "ocr": {
+    "engine": "rapidocr",
+    "dpi": 300,
+    "page_timeout_sec": 120,
+    "tesseract_path": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+    "languages": "jpn+jpn_vert"
+  },
+  "llm": {
+    "engine": "none",
+    "base_url": "http://127.0.0.1:8081/v1",
+    "model": "",
+    "timeout_sec": 600,
+    "chunk_chars": 6000,
+    "max_retries": 1
+  }
+}

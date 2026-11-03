@@ -21,7 +21,7 @@ def now_iso() -> str:
 
 
 def connect(db_path: Path) -> sqlite3.Connection:
-    conn = sqlite3.connect(str(db_path), timeout=30, isolation_level=None)
+    conn = sqlite3.connect(str(db_path), timeout=30, isolation_level=None, check_same_thread=False)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON")
     conn.execute("PRAGMA journal_mode = WAL")
@@ -45,8 +45,16 @@ def tx(conn: sqlite3.Connection) -> Iterator[sqlite3.Connection]:
 
 # ---------------------------------------------------------------- migrations
 
+def _exec(conn: sqlite3.Connection, script: str) -> None:
+    """トランザクション内で複数のDDLを実行する（executescript は暗黙にCOMMITするため使わない）。"""
+    for stmt in script.split(";"):
+        if stmt.strip():
+            conn.execute(stmt)
+
+
 def _m1(conn: sqlite3.Connection) -> None:
-    conn.executescript(
+    _exec(
+        conn,
         """
         CREATE TABLE settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);
         CREATE TABLE counters (name TEXT PRIMARY KEY, value INTEGER NOT NULL);

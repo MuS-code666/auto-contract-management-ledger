@@ -70,7 +70,8 @@ DEFAULT_SETTINGS: dict = {
     "max_pdf_mb": 100,              # 取込み可能なPDFサイズ上限
     "max_pages": 200,               # 取込み可能なページ数上限
     "ocr": {
-        "engine": "tesseract",      # tesseract / none
+        "engine": "rapidocr",       # rapidocr / tesseract / none
+        "rapidocr_model_dir": "",   # 空ならパッケージ同梱のモデルを使う
         "tesseract_path": "",       # 空なら既定の場所とPATHを探す
         "languages": "jpn+jpn_vert",
         "dpi": 300,

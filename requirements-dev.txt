@@ -1,0 +1,4 @@
+# テスト・サンプル生成用（通常の利用には不要）
+-r requirements.txt
+pytest==9.2.0
+reportlab==5.1.0
