@@ -8,24 +8,27 @@
 
 契約情報を台帳として一元管理し、登録・更新・期限管理などを自動化するためのプロジェクトです。
 
-> 技術スタック・ディレクトリ構成・ビルド/テスト手順は未確定です。決まり次第、以下の各セクションを更新してください。
+スキャンした契約書PDFからローカル環境（OCR・ローカルLLM）で管理項目を抽出し、利用者の確認後に台帳へ登録する Windows 向けローカルWebアプリ。詳細は README.md と docs/設計.md を参照。
 
 ## 技術スタック
 
-- 言語 / フレームワーク: （未定）
-- データ保存先: （未定）
+- 言語 / フレームワーク: Python 3.12、FastAPI + Uvicorn（127.0.0.1 のみ）、画面は素の HTML/CSS/JS（app/static、外部依存なし）
+- PDF: pypdfium2 ／ OCR: RapidOCR（既定）・Tesseract ／ LLM: llama.cpp llama-server（OpenAI互換・ループバック限定）
+- データ保存先: SQLite（`data/ledger.db`）、PDFは `data/契約書/<カテゴリー>/`（いずれも git 管理外）
+- ディレクトリ: `app/`（本体）、`tests/`、`scripts/`（セットアップ・起動・サンプル生成・精度評価）、`samples/`（架空の契約書PDF）、`docs/`
 
 ## よく使うコマンド
 
 ```bash
-# 依存関係のインストール
-# （未定）
+# 依存関係のインストール（Windows）
+setup.bat                                   # 開発用は: powershell -ExecutionPolicy Bypass -File scripts\setup.ps1 -Dev
 
 # 実行
-# （未定）
+start.bat                                   # = .venv\Scripts\python -m app.main（http://127.0.0.1:8765/）
 
 # テスト
-# （未定）
+.venv\Scripts\python -m pytest -q           # 実OCR・実LLMのみ: -m real（実LLMは LEDGER_LLM_URL が必要）
+.venv\Scripts\python scripts\evaluate.py --set all --ocr rapidocr   # 抽出精度の評価
 ```
 
 ## Git 運用ルール

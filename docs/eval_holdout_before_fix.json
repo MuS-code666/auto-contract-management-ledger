@@ -1,0 +1,107 @@
+{
+ "settings": {
+  "ocr": "rapidocr",
+  "llm": "none",
+  "model": ""
+ },
+ "documents": {
+  "holdout/H1_事務所建物賃貸借契約書.pdf": {
+   "status": "extracted",
+   "seconds": 0.3,
+   "pages": [
+    "ok"
+   ],
+   "llm": "disabled",
+   "fields": {
+    "title": "正解",
+    "doc_type": "正解",
+    "category": "正解",
+    "contract_date": "正解",
+    "start_date": "正解",
+    "expiry_date": "正解",
+    "expiry_type": "正解",
+    "auto_renewal": "正解",
+    "renewal_period_months": "正解",
+    "renewal_notice": "正解",
+    "termination_notice": "誤り",
+    "parties": "正解",
+    "signers": "正解"
+   }
+  },
+  "holdout/H2_設備保守点検業務委託契約書.pdf": {
+   "status": "extracted",
+   "seconds": 0.3,
+   "pages": [
+    "ok"
+   ],
+   "llm": "disabled",
+   "fields": {
+    "title": "正解",
+    "doc_type": "正解",
+    "category": "正解",
+    "contract_date": "正解",
+    "start_date": "正解",
+    "expiry_date": "正解",
+    "expiry_type": "正解",
+    "auto_renewal": "正解",
+    "renewal_period_months": "欠落",
+    "renewal_notice": "正解",
+    "termination_notice": "正解",
+    "parties": "正解",
+    "signers": "正解"
+   }
+  },
+  "holdout/H3_資材売買基本契約書.pdf": {
+   "status": "extracted",
+   "seconds": 0.3,
+   "pages": [
+    "ok"
+   ],
+   "llm": "disabled",
+   "fields": {
+    "title": "要確認",
+    "doc_type": "要確認",
+    "category": "正解",
+    "contract_date": "正解",
+    "start_date": "要確認",
+    "expiry_date": "欠落",
+    "expiry_type": "誤り",
+    "auto_renewal": "正解",
+    "renewal_period_months": "正解",
+    "renewal_notice": "正解",
+    "termination_notice": "正解",
+    "parties": "正解",
+    "signers": "正解"
+   }
+  },
+  "holdout/H4_設備保守点検業務委託契約書_スキャン.pdf": {
+   "status": "extracted",
+   "seconds": 3.2,
+   "pages": [
+    "ok"
+   ],
+   "llm": "disabled",
+   "fields": {
+    "title": "正解",
+    "doc_type": "正解",
+    "category": "正解",
+    "contract_date": "正解",
+    "start_date": "正解",
+    "expiry_date": "正解",
+    "expiry_type": "正解",
+    "auto_renewal": "正解",
+    "renewal_period_months": "欠落",
+    "renewal_notice": "正解",
+    "termination_notice": "正解",
+    "parties": "正解",
+    "signers": "正解"
+   }
+  }
+ },
+ "totals": {
+  "正解": 44,
+  "誤り": 2,
+  "欠落": 3,
+  "要確認": 3
+ }
+}

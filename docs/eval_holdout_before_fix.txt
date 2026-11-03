@@ -1,0 +1,7 @@
+設定: OCR=rapidocr LLM=none  対象=holdout
+文書                                 title  doc_ty catego contra start_ expiry expiry auto_r renewa renewa termin partie signer 秒
+H1_事務所建物賃貸借契約書.pdf                 正解   正解   正解   正解   正解   正解   正解   正解   正解   正解   誤り   正解   正解   0.3 extracted disabled
+H2_設備保守点検業務委託契約書.pdf               正解   正解   正解   正解   正解   正解   正解   正解   欠落   正解   正解   正解   正解   0.3 extracted disabled
+H3_資材売買基本契約書.pdf                   要確認  要確認  正解   正解   要確認  欠落   誤り   正解   正解   正解   正解   正解   正解   0.3 extracted disabled
+H4_設備保守点検業務委託契約書_スキャン.pdf          正解   正解   正解   正解   正解   正解   正解   正解   欠落   正解   正解   正解   正解   3.2 extracted disabled
+合計: {'正解': 44, '誤り': 2, '欠落': 3, '要確認': 3}
